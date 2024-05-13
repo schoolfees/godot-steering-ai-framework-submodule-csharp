@@ -131,7 +131,7 @@ namespace GodotSteeringAI
             if (body is null)
                 return;
             _body_ref = WeakRef(body);
-            _last_position = body.Transform.Origin;
+            _last_position = body.GlobalTransform.Origin;
             _last_orientation = body.Rotation.Y;
 
             Position = _last_position;
@@ -144,7 +144,7 @@ namespace GodotSteeringAI
             if (body is null || !body.IsInsideTree())
                 return;
 
-            var current_position = body.Transform.Origin;
+            var current_position = body.GlobalTransform.Origin;
             var current_orientation = body.Rotation.Y;
 
             Position = current_position;
